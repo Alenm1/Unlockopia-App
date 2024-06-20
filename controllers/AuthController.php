@@ -35,6 +35,13 @@ class AuthController
                         $_SESSION['apellido'] = $usuario->apellido;
                         $_SESSION['email'] = $usuario->email;
                         $_SESSION['admin'] = $usuario->admin ?? null;
+
+                        // Redirección  ADMINISTRADOR Y USUARIO
+                        if ($usuario->admin) {
+                            header('Location: /admin/dashboard');
+                        } else {
+                            header('Location: /finalizar-registro');
+                        }
                     } else {
                         Usuario::setAlerta('error', 'Password Incorrecto');
                     }
@@ -151,7 +158,7 @@ class AuthController
 
         // Muestra la vista
         $router->render('auth/olvide', [
-            'titulo' => 'Olvide mi Password',
+            'titulo' => 'Olvide mi contraseña',
             'alertas' => $alertas
         ]);
     }
@@ -194,7 +201,7 @@ class AuthController
 
                 // Redireccionar
                 if ($resultado) {
-                    header('Location: /');
+                    header('Location: /login');
                 }
             }
         }
@@ -203,7 +210,7 @@ class AuthController
 
         // Muestra la vista
         $router->render('auth/reestablecer', [
-            'titulo' => 'Reestablecer Password',
+            'titulo' => 'Reestablecer mi contraseña',
             'alertas' => $alertas,
             'token_valido' => $token_valido
         ]);
@@ -229,7 +236,7 @@ class AuthController
 
         if (empty($usuario)) {
             // No se encontró un usuario con ese token
-            Usuario::setAlerta('error', 'Token No Válido');
+            Usuario::setAlerta('error', 'Token No Válido, la cuenta no se confirmo');
         } else {
             // Confirmar la cuenta
             $usuario->confirmado = 1;
@@ -245,7 +252,7 @@ class AuthController
 
 
         $router->render('auth/confirmar', [
-            'titulo' => 'Confirma tu cuenta DevWebcamp',
+            'titulo' => 'Confirma tu cuenta de Unlockopia',
             'alertas' => Usuario::getAlertas()
         ]);
     }

@@ -14,8 +14,8 @@
             <a class="menu-redes__enlace" rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/aldair.maqueraandrade/">
                 <span class="menu-redes__ocultar">Facebook</span>
             </a>
-            <a class="menu-redes__enlace" rel="noopener noreferrer" target="_blank" href="https://x.com/Aldair_J17">
-                <span class="menu-redes__ocultar">Twitter</span>
+            <a class="menu-redes__enlace" rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/aldair-maquera-68a186257/">
+                <span class="menu-redes__ocultar">LinkedIn</span>
             </a>
             <a class="menu-redes__enlace" rel="noopener noreferrer" target="_blank" href="https://www.youtube.com/@Alenm">
                 <span class="menu-redes__ocultar">YouTube</span>
