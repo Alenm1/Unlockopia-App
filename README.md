@@ -21,7 +21,7 @@ Asegúrate de tener instalado Node.js y PHP en tu PC
 
    php -S localhost:3000
 
-6. Accede a la web  `http://localhost:3000`  caso este ocupado solo cambie el puerto :D
+6. Accede a la web  `http://localhost:3000`, caso este ocupado solo cambie el puerto :D
 
 ## Observación
 
