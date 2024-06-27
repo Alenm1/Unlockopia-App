@@ -61,3 +61,8 @@
         <p class="text-center">No Hay juegos Aún</p>
     <?php } ?>
 </div>
+
+
+<?php
+echo $paginacion;
+?>
