@@ -12,15 +12,21 @@ class JuegosController
     public static function index(Router $router)
     {
 
+        if (!is_admin()) {
+            header('Location: /login');
+        }
+
         $pagina_actual = $_GET['page'];
         $pagina_actual = filter_var($pagina_actual, FILTER_VALIDATE_INT);
 
         if (!$pagina_actual || $pagina_actual < 1) {
             header('Location: /admin/juegos?page=1');
         }
-        $registros_por_pagina = 2;
+
+        $registros_por_pagina = 10;
         $total = Juego::total();
         $paginacion = new Paginacion($pagina_actual, $registros_por_pagina, $total);
+        //debuguear($paginacion->total_paginas());
 
         if ($paginacion->total_paginas() < $pagina_actual) {
             header('Location: /admin/juegos?page=1');
@@ -28,13 +34,9 @@ class JuegosController
 
         $juegos = Juego::paginar($registros_por_pagina, $paginacion->offset());
 
-
         if (!is_admin()) {
             header('Location: /login');
         }
-
-        $juegos = Juego::all();
-
 
         $router->render('admin/juegos/index', [
             'titulo' => 'Juegos / Agregue',

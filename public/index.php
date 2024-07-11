@@ -3,12 +3,17 @@
 require_once __DIR__ . '/../includes/app.php';
 
 use MVC\Router;
+use Controllers\APIEventos;
+use Controllers\APIJuegos;
+use Controllers\APIRegalos;
 use Controllers\AuthController;
-use Controllers\DashboardController;
-use Controllers\JuegosController;
 use Controllers\EventosController;
-use Controllers\RegistradosController;
+use Controllers\JuegosController;
+use Controllers\PaginasController;
+use Controllers\RegistroController;
 use Controllers\RegalosController;
+use Controllers\DashboardController;
+use Controllers\RegistradosController;
 
 
 $router = new Router();
@@ -46,10 +51,28 @@ $router->post('/admin/juegos/editar', [JuegosController::class, 'editar']);
 $router->post('/admin/juegos/eliminar', [JuegosController::class, 'eliminar']);
 
 $router->get('/admin/eventos', [EventosController::class, 'index']);
+$router->get('/admin/eventos/crear', [EventosController::class, 'crear']);
+$router->post('/admin/eventos/crear', [EventosController::class, 'crear']);
+$router->get('/admin/eventos/editar', [EventosController::class, 'editar']);
+$router->post('/admin/eventos/editar', [EventosController::class, 'editar']);
+$router->post('/admin/eventos/eliminar', [EventosController::class, 'eliminar']);
+
+$router->get('/api/eventos-horario', [APIEventos::class, 'index']);
+$router->get('/api/juegos', [APIJuegos::class, 'index']);
+$router->get('/api/juego', [APIJuegos::class, 'juego']);
+
 
 $router->get('/admin/registrados', [RegistradosController::class, 'index']);
 
 $router->get('/admin/regalos', [RegalosController::class, 'index']);
+
+
+// Área Pública
+$router->get('/', [PaginasController::class, 'index']);
+$router->get('/devwebcamp', [PaginasController::class, 'evento']);
+$router->get('/paquetes', [PaginasController::class, 'paquetes']);
+$router->get('/workshops-conferencias', [PaginasController::class, 'conferencias']);
+#$router->get('/404', [PaginasController::class, 'error']);
 
 
 

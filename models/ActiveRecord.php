@@ -182,6 +182,7 @@ class ActiveRecord
                 $query .= " ${key} = '${value}' AND ";
             }
         }
+        #echo $query;
         $resultado = self::consultarSQL($query);
         return $resultado;
     }
