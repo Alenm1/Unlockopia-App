@@ -6,12 +6,12 @@
             </h3>
 
             <p class="footer__texto">
-                Unlockopia es tienda preferida cuando deseas comprar juegos, facil y en línea.
+                Unlockopia es tu tienda preferida cuando deseas comprar juegos, rapido y facil.
             </p>
         </div>
 
         <nav class="menu-redes">
-            <a class="menu-redes__enlace" rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/aldair.maqueraandrade/">
+            <a class="menu-redes__enlace" rel="noopener noreferrer" target="_blank" href="https://www.facebook.com/Unlockopia/">
                 <span class="menu-redes__ocultar">Facebook</span>
             </a>
             <a class="menu-redes__enlace" rel="noopener noreferrer" target="_blank" href="https://www.linkedin.com/in/aldair-jose-maquera-andrade-68a186257/">

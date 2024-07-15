@@ -18,7 +18,7 @@
 
                 // Insertar en el HTML
                 const juegoDOM = document.createElement('LI');
-                juegoDOM.classList.add('listado-ponentse__juego', 'listado-juegos__juego--seleccionado');
+                juegoDOM.classList.add('listado-juegos__juego', 'listado-juegos__juego--seleccionado');
                 juegoDOM.textContent = `${nombre} ${estudio}`
 
                 listadoJuegos.appendChild(juegosDOM)

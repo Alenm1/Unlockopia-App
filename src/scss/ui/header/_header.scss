@@ -9,6 +9,7 @@
     background-size: 400px, 400px, cover, cover;
     background-position: top left, bottom right, center center, center center ;
 
+
     &__contenedor {
         @include m.contenedor;
     }
@@ -24,14 +25,13 @@
     }
 
     &__enlace {
-        color: v.$blanco;
-        font-size: 1.4rem;
-        text-transform: uppercase;
-        font-weight: v.$bold;
-        
-        &:hover{
-            color: v.$azul;
-        }
+        @include m.enlace;
+    }
+    &__form {
+        display: flex;
+    }
+    &__submit {
+        @extend .header__enlace;
     }
     &__contenido {
         padding-top: 10rem;
@@ -63,6 +63,7 @@
             font-size: 2rem;
         }
     }
+
     &__boton {
         @include m.boton(v.$secundario, v.$blanco);
         text-transform: uppercase;

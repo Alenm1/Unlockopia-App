@@ -32,6 +32,7 @@ class Router
         if ($fn) {
             call_user_func($fn, $this);
         } else {
+            //para regresar a la pagina incial
             header('Location: /404');
         }
     }

@@ -14,7 +14,7 @@ class PaginasController
     public static function index(Router $router)
     {
 
-        /*$eventos = Evento::ordenar('hora_id', 'ASC');
+        $eventos = Evento::ordenar('hora_id', 'ASC');
 
         $eventos_formateados = [];
         foreach ($eventos as $evento) {
@@ -40,21 +40,23 @@ class PaginasController
             }
         }
 
-        // Obtener el total de cada bloque
+        //Obtener el total de cada bloque
         $juegos_total = Juego::total();
         $conferencias_total = Evento::total('categoria_id', 1);
         $workshops_total = Evento::total('categoria_id', 2);
 
-        // Obtener todos los juegos
-        $juegos = Juego::all();*/
+        //Obtener todos los juegos
+        $juegos = Juego::all();
+
+        //debuguear($conferencias);
 
         $router->render('paginas/index', [
             'titulo' => 'Inicio',
-            /*'eventos' => $eventos_formateados,
+            'eventos' => $eventos_formateados,
             'juegos_total' => $juegos_total,
             'conferencias_total' => $conferencias_total,
             'workshops_total' => $workshops_total,
-            'juegos' => $juegos*/
+            'juegos' => $juegos
         ]);
     }
     public static function evento(Router $router)
@@ -76,9 +78,9 @@ class PaginasController
     public static function conferencias(Router $router)
     {
 
-        /*$eventos = Evento::ordenar('hora_id', 'ASC');
-
+        $eventos = Evento::ordenar('hora_id', 'ASC');
         $eventos_formateados = [];
+
         foreach ($eventos as $evento) {
             $evento->categoria = Categoria::find($evento->categoria_id);
             $evento->dia = Dia::find($evento->dia_id);
@@ -100,20 +102,22 @@ class PaginasController
             if ($evento->dia_id === "2" && $evento->categoria_id === "2") {
                 $eventos_formateados['workshops_s'][] = $evento;
             }
-        }*/
+        }
+
+        //debuguear($eventos_formateados);
 
 
         $router->render('paginas/conferencias', [
             'titulo' => 'Conferencias & Workshops',
-            /*'eventos' => $eventos_formateados*/
+            'eventos' => $eventos_formateados
         ]);
     }
 
-    /*public static function error(Router $router)
+    public static function error(Router $router)
     {
 
         $router->render('paginas/error', [
-            'titulo' => 'Página no encontrada'
+            'titulo' => 'Pagina no encontrada'
         ]);
-    }*/
+    }
 }

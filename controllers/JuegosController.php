@@ -23,7 +23,7 @@ class JuegosController
             header('Location: /admin/juegos?page=1');
         }
 
-        $registros_por_pagina = 10;
+        $registros_por_pagina = 8;
         $total = Juego::total();
         $paginacion = new Paginacion($pagina_actual, $registros_por_pagina, $total);
         //debuguear($paginacion->total_paginas());
@@ -34,9 +34,6 @@ class JuegosController
 
         $juegos = Juego::paginar($registros_por_pagina, $paginacion->offset());
 
-        if (!is_admin()) {
-            header('Location: /login');
-        }
 
         $router->render('admin/juegos/index', [
             'titulo' => 'Juegos / Agregue',
@@ -57,6 +54,10 @@ class JuegosController
         $juego = new Juego;
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+            if (!is_admin()) {
+                header('Location: /login');
+            }
 
             $juego->sincronizar($_POST);
 
@@ -186,11 +187,9 @@ class JuegosController
 
     public static function eliminar()
     {
-
         if (!is_admin()) {
             header('Location: /login');
         }
-
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 

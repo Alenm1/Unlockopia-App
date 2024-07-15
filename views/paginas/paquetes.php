@@ -1,6 +1,6 @@
 <main class="paquetes">
     <h2 class="paquetes__heading"><?php echo $titulo ?></h2>
-    <p class="paquetes__descripcion">Compara los paquetes de Unlockopia</p>
+    <p class="paquetes__descripcion">Nuestros planes</p>
 
     <div class="paquetes__grid">
         <div class="paquete">
@@ -14,17 +14,6 @@
         </div>
 
         <div class="paquete">
-            <h3 class="paquete__nombre">Plan Platino</h3>
-            <ul class="paquete__lista">
-                <li class="paquete__elemento">Descuentos exclusivos en juegos seleccionados</li>
-                <li class="paquete__elemento">Soporte prioritario por correo electrónico</li>
-                <li class="paquete__elemento">Acceso a ofertas y promociones especiales</li>
-            </ul>
-
-            <p class="paquete__precio">S/.10</p>
-        </div>
-
-        <div class="paquete">
             <h3 class="paquete__nombre">Plan Premium</h3>
             <ul class="paquete__lista">
                 <li class="paquete__elemento">Acceso Plan Familiar STEAM</li>
@@ -35,5 +24,17 @@
 
             <p class="paquete__precio">S/.15</p>
         </div>
+
+        <div class="paquete">
+            <h3 class="paquete__nombre">Plan Platino</h3>
+            <ul class="paquete__lista">
+                <li class="paquete__elemento">Descuentos exclusivos en juegos seleccionados</li>
+                <li class="paquete__elemento">Soporte prioritario por correo electrónico</li>
+                <li class="paquete__elemento">Acceso a ofertas y promociones especiales</li>
+            </ul>
+
+            <p class="paquete__precio">S/.10</p>
+        </div>
+
     </div>
 </main>
