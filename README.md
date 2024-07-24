@@ -25,6 +25,6 @@ Asegúrate de tener instalado Node.js y PHP en tu PC
 
 ## Observación
 
-falta el archivo ".sql" que es la base de datos utilizada, pero se puede reemplazar. Para ello, también se debe reemplazar en el código (el root, contraseña y nueva data)
+La base de datos debe ser archivo ".sql", para este caso importe el archivo [unlockopia.sql] que es la base de datos utilizada, pero se puede reemplazar. Para ello, también se debe reemplazar en el código (el root, contraseña y nueva data)
 
 
