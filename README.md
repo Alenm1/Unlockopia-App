@@ -1,6 +1,6 @@
 ## Requisitos previos
 
-Asegúrate de tener instalado Node.js y PHP en tu PC
+Asegúrate de tener instalado Node.js, mysql y PHP en tu PC
 
 ## Instalación
 
